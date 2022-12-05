@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<style>
+
+</style>
+<body>
+    <table class="calculadora" >
+        <tr>
+          <td colspan="3"> <input class="pantalla" type="text" id="resultat" disabled /> </td>
+          <!-- netejar tots els valors -->
+          <td> <input type="button" value="C" onclick="netejar()" id="boto" /> </td>
+        </tr>
+        <tr>      
+            <td> <input type="button" value="mod" onclick="mostrar('%')" /> </td>
+            <td> <input type="button" value="exp" onclick="mostrar('**')" /> </td>
+            <td> <input type="button" value="(" onclick="mostrar('(')" /> </td>
+            <td> <input type="button" value=")" onclick="mostrar(')')" /> </td>
+        </tr>
+        <tr>
+          <!-- mostrar la tecla polsada -->
+          <td> <input type="button" value="1" onclick="mostrar('1')" /> </td>
+          <td> <input type="button" value="2" onclick="mostrar('2')" /> </td>
+          <td> <input type="button" value="3" onclick="mostrar('3')" /> </td>
+          <td> <input type="button" value="/" onclick="mostrar('/')" /> </td>
+        </tr>
+        <tr>
+          <td> <input type="button" value="4" onclick="mostrar('4')" /> </td>
+          <td> <input type="button" value="5" onclick="mostrar('5')" /> </td>
+          <td> <input type="button" value="6" onclick="mostrar('6')" /> </td>
+          <td> <input type="button" value="-" onclick="mostrar('-')" /> </td>
+        </tr>
+        <tr>
+          <td> <input type="button" value="7" onclick="mostrar('7')" /> </td>
+          <td> <input type="button" value="8" onclick="mostrar('8')" /> </td>
+          <td> <input type="button" value="9" onclick="mostrar('9')" /> </td>
+          <td> <input type="button" value="+" onclick="mostrar('+')" /> </td>
+        </tr>
+        <tr>
+          <td> <input type="button" value="." onclick="mostrar('.')" /> </td>
+          <td> <input type="button" value="0" onclick="mostrar('0')" /> </td>
+
+          <!-- calcular la operació -->
+          <td> <input type="button" value="=" onclick="calcular()" id="boto" /> </td>
+          <td> <input type="button" value="*" onclick="mostrar('*')" /> </td>
+        </tr>
+    </table>
+
+    <script>
+
+        //netejar pantalla
+        function netejar() {
+            document.getElementById("resultat").value = "";
+        }
+
+        // mostrar valors
+        function mostrar(value) {
+            document.getElementById("resultat").value += value;
+        }
+
+         // resultat de la operació
+        function calcular() {            
+            var p = document.getElementById("resultat").value;                     
+            var q = eval(p);
+            document.getElementById("resultat").value = q;
+        }
+
+      
+
+    </script>    
+</body>
+</html>
